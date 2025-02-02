@@ -1,20 +1,49 @@
 .home {
-  background: #ffffff0a;
-  padding: 2rem 4rem;
+  background: rgba(42, 42, 52, 0.36);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 4rem;
   border-radius: 15px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
 
   &__title {
     font-size: 3rem;
     text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 2rem;
   }
 
   &__nav {
     display: flex;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
+    justify-content: center;
+    margin-top: 1.5rem;
+    
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0;
+    }
+
+    li {
+      background: rgba(122, 74, 255);
+      padding: 12px 20px;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: rgba(222, 59, 255, 0.3);
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
   }
 }

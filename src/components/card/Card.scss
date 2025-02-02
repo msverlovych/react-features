@@ -1,0 +1,54 @@
+@use '../../sass/base/variables' as vars;
+
+.card {
+  width: 400px;
+  background: rgba(42, 42, 52, 0.5);
+  border-radius: 15px;
+  border: 1px solid #ffffff1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  text-align: center;
+  color: vars.$main-color;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  &__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    &-title {
+      font-size: 30px;
+    }
+    &-description {
+      font-size: 20px;
+    }
+  }
+
+  &__button {
+    font-weight: 700;
+    background-color: vars.$main-color;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &:hover {
+      color: vars.$main-color;
+      background-color: vars.$secondary-color;
+    }
+  }
+}

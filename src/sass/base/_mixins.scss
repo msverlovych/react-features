@@ -1,0 +1,24 @@
+@mixin card-container {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+
+  @media (min-width: 1200px) {
+    & {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 800px) and (max-width: 1199px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 799px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -6,6 +6,7 @@ import Footer from "../components/footer/Footer"
 const MainLayout: FC = (): ReactElement => {
   return (
     <Fragment>
+      <div className="main-background" />
       <header>
         <Navbar />
       </header>

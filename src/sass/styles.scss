@@ -1,8 +1,15 @@
+@use './base/variables' as vars;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   background: #18181e;
   overflow-x: hidden;
 }
@@ -21,14 +28,14 @@ nav ul {
 }
 
 nav ul li {
-  background: #6c4dc3;
+  background: vars.$accent-color;
   padding: 10px 20px;
   border-radius: 5px;
+}
 
-  a {
-    text-decoration: none;
-    color: #fff;
-  }
+a {
+  text-decoration: none;
+  color: vars.$accent-color;
 }
 
 ul, p {
@@ -36,22 +43,44 @@ ul, p {
 }
 
 button {
+  padding: 1.6rem 1rem;
   height: 40px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 17px;
-  color: #fff;
+  color: vars.$dark-color;
+  border: none;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
 #main {
   position: relative;
-  min-height: calc(100vh - 5rem);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+}
+
+.main-background {
+  position: absolute;
+  top: 2rem;
+  right: 30%;
+  width: 40vw;
+  height: 100vh;
+  max-height: 100vh;
+  background: url('../assets/react.svg') no-repeat center;
+  background-size: contain;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .loading-wrapper, .error-wrapper {

@@ -1,0 +1,40 @@
+@use '../../sass/base/variables' as vars;
+@use '../../sass/base/mixins' as mixins;
+
+.hero {
+  padding: 3rem 0;
+  margin-top: 8rem;
+
+  &__text {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+
+    &-accent {
+      color: vars.$secondary-color;
+    }
+
+    @media (max-width: 1200px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 25px;
+    color: vars.$main-color;
+    margin-top: 1rem;
+
+    @media (max-width: 1200px) {
+      font-size: 20px;
+    }
+  }
+
+  &__cards {
+    margin-top: 2rem;
+    @include mixins.card-container;
+  }
+}

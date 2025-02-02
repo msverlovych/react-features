@@ -3,18 +3,23 @@ import { Link } from 'react-router'
 import './Home.scss'
 
 const Home: FC = (): ReactElement => (
-  <section className="home">
-    <h1 className='home__title'>React Hooks</h1>
-    <nav className='home__nav'>
-      <ul>
-        <li><Link to="/use-effect">Use-effect</Link></li>
-        <li><Link to="/use-memo">Use-Memo</Link></li>
-        <li><Link to="/react-memo">React-memo</Link></li>
-        <li><Link to="/use-callback">Use-Callback</Link></li>
-        <li><Link to="/use-ref">Use-Ref</Link></li>
-      </ul>
-    </nav>
-  </section>
+  <div className="home">
+    <div className="container">
+      <div className="home__wrapper">
+        <h1 className="home__title">React Features</h1>
+        <nav className="home__nav">
+          <ul>
+            <li><Link to="/use-effect">UseEffect</Link></li>
+            <li><Link to="/use-memo">UseMemo</Link></li>
+            <li><Link to="/react-memo">ReactMemo</Link></li>
+            <li><Link to="/use-callback">UseCallback</Link></li>
+            <li><Link to="/use-ref">UseRef</Link></li>
+            <li><Link to="/flex-box">FlexBox</Link></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
 );
 
 export default Home;
