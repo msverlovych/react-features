@@ -1,0 +1,26 @@
+.flexbox {
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: auto;
+  padding-top: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .flex-container {
+    width: 1400px;
+    border: 1px solid white;
+    min-height: 300px;
+
+    .flex-item {
+      width: 300px;
+      height: 300px;
+      background-color: #4f4f61;
+      border: 2px solid rgb(255, 37, 37);
+      color: #fff;
+      font-size: 30px;
+    }    
+  }
+}

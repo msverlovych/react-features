@@ -7,13 +7,13 @@ const MainLayout: FC = (): ReactElement => {
   return (
     <Fragment>
       <div className="main-background" />
-      <header>
+      <header className="header">
         <Navbar />
       </header>
       <main id="main">
         <Outlet />
       </main>
-      <footer>
+      <footer className="footer">
         <Footer />
       </footer>
     </Fragment>

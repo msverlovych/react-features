@@ -6,13 +6,13 @@ const Navbar: FC = (): ReactElement => {
   const location = useLocation()
 
   return (
-    <nav className="navbar">
-      <span className="navbar__logo">
+    <nav className="Navbar">
+      <span className="Navbar__logo">
         React-19
-        <span className='navbar__logo-red'> PLAY</span>
-        <span className='navbar__logo-blue'>GROUND</span>
+        <span className='Navbar__logo-red'> PLAY</span>
+        <span className='Navbar__logo-blue'>GROUND</span>
       </span>
-      {location.pathname !== '/' && <Link className='navbar__link' to='/'>GO BACK</Link>}
+      {location.pathname !== '/' && <Link className='Navbar__link' to='/'>GO BACK</Link>}
     </nav>
   )
 }

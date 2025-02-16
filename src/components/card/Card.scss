@@ -1,7 +1,9 @@
 @use '../../sass/base/variables' as vars;
 
 .card {
-  width: 400px;
+  min-width: 400px;
+  max-width: 600px;
+  width: 100%;
   background: rgba(42, 42, 52, 0.5);
   border-radius: 15px;
   border: 1px solid #ffffff1a;
@@ -15,6 +17,11 @@
   overflow: hidden;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  @media (max-width: 567px) {
+    min-width: 300px;
+    max-width: 400px;
+  }
 
   &:hover {
     transform: translateY(-10px);
@@ -38,6 +45,7 @@
     }
     &-description {
       font-size: 20px;
+      padding: 0 1rem;
     }
   }
 

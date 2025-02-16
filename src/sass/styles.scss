@@ -11,7 +11,6 @@ body {
   margin: 0;
   padding: 0;
   background: #18181e;
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -59,9 +58,6 @@ button {
 #main {
   position: relative;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1;
 }
 
@@ -76,11 +72,6 @@ button {
   background-size: contain;
   opacity: 0.2;
   z-index: -1;
-}
-
-.container {
-  max-width: 1600px;
-  margin: 0 auto;
 }
 
 .loading-wrapper, .error-wrapper {

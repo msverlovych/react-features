@@ -8,7 +8,9 @@ import UseMemo from "../pages/Memoization/UseMemo";
 import ReactMemo from "../pages/Memoization/ReactMemo";
 import UseCallback from "../pages/use-callback";
 import UseRef from "../pages/use-ref";
-import Hero from "../pages/flex-box/Hero";
+import Hero from "../pages/flex-box-cards/Hero";
+import FlexBox from "../pages/flex-box/FlexBox";
+import ReactStrap from "../pages/reactstrap/Reactstrap";
 
 export const routes = createBrowserRouter([
   {
@@ -23,7 +25,9 @@ export const routes = createBrowserRouter([
       { path: '/react-memo', element: <ReactMemo /> },
       { path: '/use-callback', element: <UseCallback /> },
       { path: '/use-ref', element: <UseRef /> },
-      { path: '/flex-box', element: <Hero /> }
+      { path: '/flex-box-cards', element: <Hero /> },
+      { path: '/flex-box', element: <FlexBox /> },
+      { path: '/reactstrap', element: <ReactStrap /> }
     ],
   },
 ])
