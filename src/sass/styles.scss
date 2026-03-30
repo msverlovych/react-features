@@ -55,23 +55,39 @@ button {
   cursor: pointer;
 }
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 #main {
   position: relative;
-  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
   z-index: 1;
 }
 
+#svgs {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-background {
-  position: absolute;
-  top: 2rem;
-  right: 30%;
-  width: 40vw;
-  height: 100vh;
-  max-height: 100vh;
+  position: fixed;
+  inset: 0;
   background: url('../assets/react.svg') no-repeat center;
-  background-size: contain;
+  background-size: 40vw;
   opacity: 0.2;
   z-index: -1;
+  pointer-events: none;
 }
 
 .loading-wrapper, .error-wrapper {

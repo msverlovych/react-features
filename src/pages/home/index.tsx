@@ -9,13 +9,9 @@ const Home: FC = (): ReactElement => (
       <nav className="home__nav">
         <ul>
           <li><Link to="/use-effect">UseEffect</Link></li>
-          <li><Link to="/use-memo">UseMemo</Link></li>
-          <li><Link to="/react-memo">ReactMemo</Link></li>
-          <li><Link to="/use-callback">UseCallback</Link></li>
-          <li><Link to="/use-ref">UseRef</Link></li>
           <li><Link to="/flex-box-cards">FlexBox Cards</Link></li>
           <li><Link to="/flex-box">FlexBox</Link></li>
-          <li><Link to="/reactstrap">ReactStrap</Link></li>
+          <li><Link to="/svgs">SVGS</Link></li>
         </ul>
       </nav>
     </div>
