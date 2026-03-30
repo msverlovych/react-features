@@ -1,0 +1,122 @@
+@use '../../sass/base/variables' as vars;
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+
+  &__runner {
+    filter: url(#pencil-filter);
+  }
+
+  &__text {
+    color: vars.$main-color;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+
+  &__pencil-stroke {
+    filter: drop-shadow(0 0 1px rgba(218, 215, 255, 0.4));
+  }
+
+  // Arms swing animation
+  &__arm-front {
+    transform-origin: 100px 72px;
+    animation: arm-swing-front 0.6s ease-in-out infinite alternate;
+  }
+
+  &__arm-back {
+    transform-origin: 100px 72px;
+    animation: arm-swing-back 0.6s ease-in-out infinite alternate;
+  }
+
+  // Legs swing animation
+  &__leg-front {
+    transform-origin: 100px 110px;
+    animation: leg-swing-front 0.6s ease-in-out infinite alternate;
+  }
+
+  &__leg-back {
+    transform-origin: 100px 110px;
+    animation: leg-swing-back 0.6s ease-in-out infinite alternate;
+  }
+
+  &__foot-front {
+    animation: foot-front 0.6s ease-in-out infinite alternate;
+  }
+
+  &__foot-back {
+    animation: foot-back 0.6s ease-in-out infinite alternate;
+  }
+}
+
+// Arms
+@keyframes arm-swing-front {
+  0% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+
+@keyframes arm-swing-back {
+  0% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+  }
+}
+
+// Legs
+@keyframes leg-swing-front {
+  0% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes leg-swing-back {
+  0% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+// Feet follow legs
+@keyframes foot-front {
+  0% {
+    transform: translate(20px, -10px);
+  }
+  100% {
+    transform: translate(-20px, 10px);
+  }
+}
+
+@keyframes foot-back {
+  0% {
+    transform: translate(-20px, 10px);
+  }
+  100% {
+    transform: translate(20px, -10px);
+  }
+}
+
+// Loading text pulse
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}

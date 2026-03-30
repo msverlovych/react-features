@@ -1,50 +1,93 @@
-# React + TypeScript + Vite
+<p align="center">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" width="120" height="120" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">React 19 Playground</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  <strong>A hands-on sandbox for exploring modern React 19 features, patterns, and best practices.</strong>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React 19.2" />
+  <img src="https://img.shields.io/badge/Vite-8.0-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite 8" />
+  <img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript 5.9" />
+  <img src="https://img.shields.io/badge/React_Compiler-1.0-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React Compiler" />
+</p>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## About
 
-- Configure the top-level `parserOptions` property like this:
+**React 19 Playground** is a living lab built for experimenting with the latest React ecosystem. Each page is a self-contained feature demo — a place to break things, learn how they work under the hood, and build intuition for modern React patterns.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Built on the bleeding edge: **Vite 8** with Rolldown, the official **React Compiler** for automatic memoization, and **React Router 7** for type-safe routing.
+
+## Features
+
+| Page | What it explores |
+|------|-----------------|
+| **UseEffect** | Side effects, cleanup, dependency arrays |
+| **FlexBox Cards** | Responsive card layouts with CSS Flexbox |
+| **FlexBox** | Advanced Flexbox patterns and alignment |
+| **SVG Icons** | SVG handling as React components via SVGR |
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| **Framework** | React 19.2 |
+| **Build** | Vite 8 + Rolldown |
+| **Language** | TypeScript 5.9 |
+| **Optimization** | React Compiler (automatic memoization) |
+| **Routing** | React Router 7 |
+| **Styling** | SASS (modern compiler) |
+| **SVG** | vite-plugin-svgr |
+| **Linting** | ESLint 10 + typescript-eslint |
+
+## Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/msverlovych/react-features.git
+cd react-features
+
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Open [http://localhost:5173](http://localhost:5173) and start exploring.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Scripts
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with HMR |
+| `npm run build` | Type-check + production build |
+| `npm run lint` | Run ESLint across the project |
+| `npm run preview` | Preview the production build locally |
+
+## Project Structure
+
 ```
+src/
+  components/       # Reusable UI components (Navbar, Footer, Card, ErrorBoundary)
+  layouts/          # Page layout wrappers
+  pages/            # Feature demo pages
+  router/           # Route definitions
+  sass/             # Global styles, variables, mixins
+  assets/           # Static assets (images, SVGs)
+```
+
+## License
+
+This project is for learning and experimentation purposes.
+
+---
+
+<p align="center">
+  Built with curiosity and <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="16" height="16" /> by <a href="https://github.com/msverlovych">msverlovych</a>
+</p>

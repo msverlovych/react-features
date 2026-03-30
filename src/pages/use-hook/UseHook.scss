@@ -1,0 +1,125 @@
+@use '../../sass/base/variables' as vars;
+
+.use-hook {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 1rem;
+
+  &__title {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    color: vars.$main-color;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.6;
+
+    code {
+      background: rgba(122, 74, 255, 0.2);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #fff;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    padding: 2rem;
+    background: rgba(42, 42, 52, 0.36);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+  }
+
+  &__loading {
+    color: vars.$main-color;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 1.25rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+  }
+
+  &__list-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &__list-detail {
+    font-size: 0.9rem;
+    color: rgba(218, 215, 255, 0.6);
+  }
+
+  &__rules {
+    width: 100%;
+    padding: 2rem;
+    background: rgba(42, 42, 52, 0.36);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+  }
+
+  &__rules-title {
+    font-size: 1.3rem;
+    color: vars.$main-color;
+    margin-bottom: 1.25rem;
+  }
+
+  &__rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__rules-item {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding-left: 2rem;
+    position: relative;
+
+    &--do {
+      color: vars.$main-color;
+
+      &::before {
+        content: '\2705';
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    &--dont {
+      color: vars.$accent-color;
+
+      &::before {
+        content: '\1F6AB';
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}

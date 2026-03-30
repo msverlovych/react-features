@@ -12,6 +12,9 @@ const Home: FC = (): ReactElement => (
           <li><Link to="/flex-box-cards">FlexBox Cards</Link></li>
           <li><Link to="/flex-box">FlexBox</Link></li>
           <li><Link to="/svgs">SVGS</Link></li>
+          <li><Link to="/activity">Activity</Link></li>
+          <li><Link to="/use-effect-event">useEffectEvent</Link></li>
+          <li><Link to="/use-hook">use()</Link></li>
         </ul>
       </nav>
     </div>
