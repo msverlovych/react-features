@@ -8,6 +8,7 @@ import SvgIcons from "../pages/svg-icons";
 import ActivityPage from "../pages/activity";
 import UseEffectEventPage from "../pages/use-effect-event";
 import UseHookPage from "../pages/use-hook";
+import React19OverviewPage from "../pages/react19-overview";
 
 export const routes = createBrowserRouter([
   {
@@ -21,7 +22,8 @@ export const routes = createBrowserRouter([
       { path: '/svgs', element: <SvgIcons /> },
       { path: '/activity', element: <ActivityPage /> },
       { path: '/use-effect-event', element: <UseEffectEventPage /> },
-      { path: '/use-hook', element: <UseHookPage /> }
+      { path: '/use-hook', element: <UseHookPage /> },
+      { path: '/react19-overview', element: <React19OverviewPage /> }
     ],
   },
 ])

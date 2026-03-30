@@ -17,6 +17,9 @@ const Home: FC = (): ReactElement => (
           <li><Link to="/use-hook">use()</Link></li>
         </ul>
       </nav>
+      <Link to="/react19-overview" className="home__overview-btn">
+        React 19 Overview
+      </Link>
     </div>
   </section>
 );
