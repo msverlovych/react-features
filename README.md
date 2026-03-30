@@ -27,10 +27,15 @@ Built on the bleeding edge: **Vite 8** with Rolldown, the official **React Compi
 
 | Page | What it explores |
 |------|-----------------|
-| **UseEffect** | Side effects, cleanup, dependency arrays |
-| **FlexBox Cards** | Responsive card layouts with CSS Flexbox |
-| **FlexBox** | Advanced Flexbox patterns and alignment |
-| **SVG Icons** | SVG handling as React components via SVGR |
+| **React 19 Overview** | Compiler, new hooks & APIs overview with interactive cat animations |
+| **useEffect** | Side effects, data fetching, loading & error states |
+| **useEffectEvent** | Stable callbacks inside Effects without stale closures |
+| **use()** | Reading Promises during render with Suspense & ErrorBoundary |
+| **Activity** | Hiding UI while preserving component state |
+| **Form Actions** | Form submission with pending state and error handling |
+| **FlexBox** | Interactive flexbox playground with live CSS output |
+| **FlexBox Cards** | Responsive card grid layouts |
+| **SVG Icons** | SVG as React components via vite-plugin-svgr |
 
 ## Tech Stack
 
@@ -74,9 +79,9 @@ Open [http://localhost:5173](http://localhost:5173) and start exploring.
 
 ```
 src/
-  components/       # Reusable UI components (Navbar, Footer, Card, ErrorBoundary)
-  layouts/          # Page layout wrappers
-  pages/            # Feature demo pages
+  components/       # Reusable UI (Navbar, Footer, Card, Loader, ErrorBoundary)
+  layouts/          # Page layout wrappers (fixed header/footer, centered content)
+  pages/            # Feature demo pages (one folder per route)
   router/           # Route definitions
   sass/             # Global styles, variables, mixins
   assets/           # Static assets (images, SVGs)

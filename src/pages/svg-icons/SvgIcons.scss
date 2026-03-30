@@ -1,10 +1,61 @@
-.wrapper {
-  padding: 2rem 6rem;
-  background: white;
-  border-radius: 10px;
+@use '../../sass/base/variables' as vars;
+
+.svg-icons {
+  max-width: 1200px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+
+  &__title {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    color: vars.$main-color;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 650px;
+
+    code {
+      background: rgba(122, 74, 255, 0.2);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #fff;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+    background: rgba(42, 42, 52, 0.36);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: rgba(122, 74, 255, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(122, 74, 255, 0.15);
+    }
+  }
+
+  &__icon {
+    width: 8rem;
+    height: auto;
+  }
 }

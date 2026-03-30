@@ -122,4 +122,11 @@
       }
     }
   }
+
+  &__error {
+    color: vars.$accent-color;
+    font-size: 1rem;
+    text-align: center;
+    padding: 2rem;
+  }
 }

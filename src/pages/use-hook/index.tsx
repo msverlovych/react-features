@@ -1,4 +1,5 @@
-import {FC, ReactElement, Suspense, use} from 'react'
+import { FC, ReactElement, Suspense, use } from 'react'
+import ErrorBoundary from '../../components/ErrorBoundary'
 import Loader from '../../components/loader/Loader'
 import './UseHook.scss'
 
@@ -12,10 +13,13 @@ interface IUser {
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const usersPromise: Promise<IUser[]> = fetch('https://jsonplaceholder.typicode.com/users')
-  .then((res) => res.json())
-  .then((data) => delay(4000).then(() => data))
+  .then((res) => {
+    if (!res.ok) throw new Error(`HTTP error: ${res.status}`)
+    return res.json()
+  })
+  .then((data) => delay(2000).then(() => data))
 
-const UserList: FC = (): ReactElement => { //Returns A Liat of Users
+const UserList: FC = (): ReactElement => {
   const users = use(usersPromise)
 
   return (
@@ -31,7 +35,13 @@ const UserList: FC = (): ReactElement => { //Returns A Liat of Users
   )
 }
 
-const UseHookPage: FC = (): ReactElement => { //Users Page
+const ErrorFallback: FC = (): ReactElement => (
+  <div className="use-hook__error">
+    Failed to load users. Please refresh the page.
+  </div>
+)
+
+const UseHookPage: FC = (): ReactElement => {
   return (
     <section className="use-hook">
       <h1 className="use-hook__title">use()</h1>
@@ -39,13 +49,15 @@ const UseHookPage: FC = (): ReactElement => { //Users Page
         The <code>use()</code> hook reads values from Promises or Context
         directly during render. Below, a list of users is fetched with a
         Promise and unwrapped with <code>use()</code> — wrapped in{' '}
-        <code>&lt;Suspense&gt;</code> to show a fallback while loading.
+        <code>&lt;Suspense&gt;</code> and <code>&lt;ErrorBoundary&gt;</code>.
       </p>
 
       <div className="use-hook__card">
-        <Suspense fallback={<Loader />}>
-          <UserList />
-        </Suspense>
+        <ErrorBoundary fallback={<ErrorFallback />}>
+          <Suspense fallback={<Loader />}>
+            <UserList />
+          </Suspense>
+        </ErrorBoundary>
       </div>
 
       <div className="use-hook__rules">

@@ -1,4 +1,4 @@
-import {FC, ReactElement} from "react"
+import { FC, ReactElement } from 'react'
 import './SvgIcons.scss'
 
 import Icon1 from '../../assets/svg/slot_1_empty.svg?react'
@@ -14,25 +14,28 @@ import Icon10 from '../../assets/svg/slot_10_empty.svg?react'
 import Icon11 from '../../assets/svg/slot_11_empty.svg?react'
 import Icon12 from '../../assets/svg/slot_12_empty.svg?react'
 
-const SvgIcons: FC = (): ReactElement => {
-    return (
-        <section id="svgs">
-            <div className="wrapper">
-                <Icon1 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon2 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon3 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon4 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon5 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon6 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon7 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon8 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon9 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon10 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon11 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-                <Icon12 color="#4f7aa9" style={{ width: "15rem", height: "auto" }} />
-            </div>
-        </section>
-    );
-};
+const icons = [Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7, Icon8, Icon9, Icon10, Icon11, Icon12]
 
-export default SvgIcons;
+const SvgIcons: FC = (): ReactElement => {
+  return (
+    <section className="svg-icons">
+      <h1 className="svg-icons__title">SVG Icons</h1>
+      <p className="svg-icons__description">
+        SVGs imported as React components via{' '}
+        <code>vite-plugin-svgr</code>. Each icon accepts standard SVG props
+        like <code>color</code>, <code>width</code>, and <code>style</code> —
+        making them fully themeable and scalable.
+      </p>
+
+      <div className="svg-icons__grid">
+        {icons.map((Icon, i) => (
+          <div key={i} className="svg-icons__item" role="img" aria-label={`Slot icon ${i + 1}`}>
+            <Icon color="#4f7aa9" className="svg-icons__icon" />
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+export default SvgIcons

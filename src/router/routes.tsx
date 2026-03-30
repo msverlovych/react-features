@@ -9,6 +9,7 @@ import ActivityPage from "../pages/activity";
 import UseEffectEventPage from "../pages/use-effect-event";
 import UseHookPage from "../pages/use-hook";
 import React19OverviewPage from "../pages/react19-overview";
+import FormAction from "../pages/form-action-page";
 
 export const routes = createBrowserRouter([
   {
@@ -23,7 +24,8 @@ export const routes = createBrowserRouter([
       { path: '/activity', element: <ActivityPage /> },
       { path: '/use-effect-event', element: <UseEffectEventPage /> },
       { path: '/use-hook', element: <UseHookPage /> },
-      { path: '/react19-overview', element: <React19OverviewPage /> }
+      { path: '/react19-overview', element: <React19OverviewPage /> },
+      { path: '/form-action', element: <FormAction /> }
     ],
   },
 ])

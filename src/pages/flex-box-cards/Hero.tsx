@@ -10,12 +10,12 @@ import CardFive from '../../assets/card5.jpg'
 import CardSix from '../../assets/card6.jpg'
 
 const cards: ICard[] = [
-  { id: 0, title: 'Display Flex', subtitle: 'By default always in row', img: CardOne },
-  { id: 2, title: 'Flex Direction', subtitle: 'Creates vertical or horysontal direction', img: CardTwo },
-  { id: 3, title: 'Align Items', subtitle: 'Makes a spaces between items', img: CardThree },
-  { id: 4, title: 'Align Itemqewdqwds', subtitle: 'Makes a qwdqwdqwdspaces between items', img: CardFour },
-  { id: 5, title: 'Align Itemqewdqwds', subtitle: 'Makes a qwdqwdqwdspaces between items', img: CardFive },
-  { id: 6, title: 'Align Itemqewdqwds', subtitle: 'Makes a qwdqwdqwdspaces between items', img: CardSix }
+  { id: 0, title: 'Display Flex', subtitle: 'Enables a flex context for all direct children', img: CardOne },
+  { id: 2, title: 'Flex Direction', subtitle: 'Creates vertical or horizontal layout direction', img: CardTwo },
+  { id: 3, title: 'Align Items', subtitle: 'Aligns items along the cross axis', img: CardThree },
+  { id: 4, title: 'Justify Content', subtitle: 'Distributes space along the main axis', img: CardFour },
+  { id: 5, title: 'Flex Wrap', subtitle: 'Allows items to wrap onto multiple lines', img: CardFive },
+  { id: 6, title: 'Gap', subtitle: 'Controls spacing between flex items', img: CardSix }
 ]
 
 const Hero: FC = (): ReactElement => {

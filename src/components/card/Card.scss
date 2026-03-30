@@ -51,7 +51,9 @@
 
   &__button {
     font-weight: 700;
+    color: vars.$dark-color;
     background-color: vars.$main-color;
+    border-radius: 10px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
     &:hover {

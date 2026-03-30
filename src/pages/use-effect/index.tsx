@@ -1,31 +1,35 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FC, ReactElement, useEffect, useState } from "react"
+import Loader from "../../components/loader/Loader"
 import './UseEffect.scss'
 
 interface IProduct {
-  id: string,
-  title: string,
-  description: string,
+  id: string
+  title: string
+  description: string
   image: string
 }
 
 const UseEffect: FC = (): ReactElement => {
-  const [ products, setProducts ] = useState<IProduct[]>([])
-  const [ loading, setLoading ] = useState<boolean>(false)
-  const [ error, setError ] = useState<string | null>(null)
-
-  // const [count, setCount] = useState<number>(0)
+  const [products, setProducts] = useState<IProduct[]>([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true)
       try {
-        const response = await fetch('https://fakestoreapi.com/products?limit=4', { method: 'GET' })
-        const data: IProduct[] = await response.json() 
+        const response = await fetch('https://fakestoreapi.com/products?limit=4')
+
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`)
+        }
+
+        const data: IProduct[] = await response.json()
         setProducts(data)
-      } catch (error: any) {
-        console.error(error);
-        setError('Something wend wrong. Please try again later.')
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : 'Unknown error'
+        console.error(message)
+        setError('Something went wrong. Please try again later.')
       } finally {
         setTimeout(() => setLoading(false), 1000)
       }
@@ -34,41 +38,34 @@ const UseEffect: FC = (): ReactElement => {
     fetchData()
   }, [])
 
-  const loadingWrapper = (
-    <div className='loading-wrapper'>
-      <span className='loading'>LOADING...⏳</span>
-    </div>
-  )
-
-  const errorWrapper = (
-    <div className='error-wrapper'>
-      <span className='error'>{error || 'Some error happened...'}</span>
-    </div>
-  )
-
   return (
     <section className="product">
-      <h1 className='product__title'>Use Effect 🎇</h1>
-      {/* {!loading && (
-        <div className="product__interval">
-          <span className="product__interval-text">{count}</span>
+      <h1 className="product__title">useEffect</h1>
+      <p className="product__description">
+        <code>useEffect</code> lets you synchronize a component with an external
+        system. Below, it fetches product data from an API on mount — handling
+        loading, success, and error states.
+      </p>
+
+      {error && (
+        <div className="error-wrapper">
+          <span className="error">{error}</span>
         </div>
-      )} */}
-      {/* <div style={{ padding: "1rem" }}>
-        <button style={{ color: "#000" }} onClick={() => setCount(prev => prev + 1)}>Increment</button>
-      </div> */}
-      {!!error && errorWrapper}
-      {!loading ? (
-        <ul className='product__block'>
+      )}
+
+      {loading ? (
+        <Loader />
+      ) : (
+        <ul className="product__block">
           {products.map(({ id, title, description, image }) => (
-            <li key={id} className='product__item'>
-              <h2 className='product__item-title'>{title}</h2>
-              <p className='product__item-description'>{description}</p>
-              <img className='product__item-image' src={image} alt="product" />
+            <li key={id} className="product__item">
+              <h2 className="product__item-title">{title}</h2>
+              <p className="product__item-description">{description}</p>
+              <img className="product__item-image" src={image} alt={title} />
             </li>
           ))}
         </ul>
-      ) : loadingWrapper}
+      )}
     </section>
   )
 }
