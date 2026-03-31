@@ -11,6 +11,8 @@ const navItems = [
   { to: '/use-effect-event', label: 'useEffectEvent' },
   { to: '/use-hook', label: 'use()' },
   { to: '/form-action', label: 'Form Actions' },
+  { to: '/use-form-status', label: 'useFormStatus' },
+  { to: '/use-optimistic', label: 'useOptimistic' },
 ]
 
 const Home: FC = (): ReactElement => (

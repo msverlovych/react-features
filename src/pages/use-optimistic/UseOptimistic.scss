@@ -1,0 +1,190 @@
+@use '../../sass/base/variables' as vars;
+
+.optimistic {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 1rem;
+
+  &__title {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    color: vars.$main-color;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.6;
+
+    code {
+      background: rgba(122, 74, 255, 0.2);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #fff;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(42, 42, 52, 0.36);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+  }
+
+  &__messages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 80px;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding-right: 0.25rem;
+  }
+
+  &__empty {
+    color: rgba(218, 215, 255, 0.35);
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 1.5rem 0;
+  }
+
+  &__message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.65rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+
+    &--pending {
+      opacity: 0.55;
+      border-style: dashed;
+    }
+
+    &-text {
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    &-status {
+      color: vars.$secondary-color;
+      font-size: 0.8rem;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    gap: 0.5rem;
+
+    input {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      color: #fff;
+      transition: border-color 0.2s ease;
+
+      &::placeholder {
+        color: rgba(218, 215, 255, 0.3);
+      }
+
+      &:focus {
+        border-color: vars.$secondary-color;
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 0.7rem 1.5rem;
+      width: auto;
+      height: auto;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: vars.$secondary-color;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover:not(:disabled) {
+        background: rgba(122, 74, 255, 0.75);
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__error {
+    margin-top: 0.75rem;
+    color: vars.$accent-color;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  &__rules {
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(42, 42, 52, 0.36);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+  }
+
+  &__rules-title {
+    font-size: 1.3rem;
+    color: vars.$main-color;
+    margin-bottom: 1rem;
+  }
+
+  &__rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__rules-item {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding-left: 2rem;
+    position: relative;
+
+    &--do {
+      color: vars.$main-color;
+
+      &::before {
+        content: '\2705';
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    &--dont {
+      color: vars.$accent-color;
+
+      &::before {
+        content: '\1F6AB';
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}

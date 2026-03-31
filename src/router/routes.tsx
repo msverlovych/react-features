@@ -10,6 +10,8 @@ import UseEffectEventPage from "../pages/use-effect-event";
 import UseHookPage from "../pages/use-hook";
 import React19OverviewPage from "../pages/react19-overview";
 import FormAction from "../pages/form-action-page";
+import UseFormStatusPage from "../pages/use-form-status";
+import UseOptimisticPage from "../pages/use-optimistic";
 
 export const routes = createBrowserRouter([
   {
@@ -25,7 +27,9 @@ export const routes = createBrowserRouter([
       { path: '/use-effect-event', element: <UseEffectEventPage /> },
       { path: '/use-hook', element: <UseHookPage /> },
       { path: '/react19-overview', element: <React19OverviewPage /> },
-      { path: '/form-action', element: <FormAction /> }
+      { path: '/form-action', element: <FormAction /> },
+      { path: '/use-form-status', element: <UseFormStatusPage /> },
+      { path: '/use-optimistic', element: <UseOptimisticPage /> }
     ],
   },
 ])

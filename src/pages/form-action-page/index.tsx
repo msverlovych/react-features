@@ -1,17 +1,22 @@
-import { FC, ReactElement, useState, ChangeEvent, FormEvent } from 'react'
+import { FC, ReactElement, useState, ChangeEvent, SubmitEvent } from 'react'
 import './FormAction.scss'
 
+interface IFormData {
+  title: string,
+  description: string
+}
+
 const FormAction: FC = (): ReactElement => {
-  const [formData, setFormData] = useState({ title: '', description: '' })
-  const [isPending, setIsPending] = useState(false)
+  const [formData, setFormData] = useState<IFormData>({ title: '', description: '' })
   const [responseMessage, setResponseMessage] = useState<string | null>(null)
+  const [isPending, setIsPending] = useState(false)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsPending(true)
     setResponseMessage(null)
@@ -69,9 +74,7 @@ const FormAction: FC = (): ReactElement => {
           rows={4}
           required
         />
-        <button type="submit" disabled={isPending}>
-          {isPending ? 'Submitting...' : 'Submit'}
-        </button>
+        <button type="submit" disabled={isPending}>{isPending ? 'Submitting...' : 'Submit'}</button>
       </form>
 
       {responseMessage && (
